@@ -1,0 +1,24 @@
+{
+  "name": "claude-model-unlocker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MSIX-safe patch that lets Claude Desktop's third-party provider list accept and display non-Anthropic model IDs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/unit/ tests/integration/",
+    "test:powershell": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/powershell/backup-store.tests.ps1",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/verify.ps1",
+    "patch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/patch.ps1",
+    "inspect": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/inspect.ps1",
+    "restore": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/restore.ps1",
+    "launch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/launch.ps1"
+  },
+  "files": [
+    "scripts/",
+    "src/",
+    "tests/",
+    "tools/"
+  ]
+}

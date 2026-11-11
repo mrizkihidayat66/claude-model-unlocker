@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # The dependency-free suite needs no Claude Desktop install, so CI can run it.
+    # tests/verify.ps1 needs a real install and is run locally instead.
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Unit and synthetic-archive tests
+        run: npm test
+
+      - name: Backup store tests
+        shell: powershell
+        run: .\tests\powershell\backup-store.tests.ps1

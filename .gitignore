@@ -1,0 +1,25 @@
+# Runtime state lives outside the repository (%LOCALAPPDATA%\ClaudeModelUnlocker).
+# These entries guard against someone pointing the tool at the repo by mistake.
+
+# Backups: multi-hundred-megabyte archives and executables
+backups/
+*.asar
+*.exe
+
+# Scratch output from tools/ and tests/
+work/
+*.asar.new
+*.asar.out
+extracted/
+node_modules/
+
+# Editor and OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local logs
+*.log
