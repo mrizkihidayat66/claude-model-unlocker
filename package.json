@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test tests/unit/ tests/integration/",
+    "test": "node --test",
     "test:powershell": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/powershell/backup-store.tests.ps1",
     "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/verify.ps1",
     "patch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/patch.ps1",
